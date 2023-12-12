@@ -1,0 +1,38 @@
+﻿@model E_commerce.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+<br/>
+
+<div style="border:solid 3px mediumorchid;" class="m-1">
+
+    <div class="container mt-5">
+<h1>Create</h1>
+
+<h4>Category</h4>
+        <hr style="border:1px solid mediumorchid;" />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Category"  asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+            <div class="form-group">
+                <label asp-for="Categoryname" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"class="control-label"></label>
+                <br/>
+                <input asp-for="Categoryname" class="form-control mt-1" />
+                <span asp-validation-for="Categoryname" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" style="background-color:mediumorchid" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+        <div>
+            <i class="bi bi-arrow-left-short"></i>    <a asp-action="Index" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Back to List</a>
+</div>
+</div>
+<br />

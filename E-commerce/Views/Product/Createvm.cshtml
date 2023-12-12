@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@model  E_commerce.Models.ViewModels.ProductVm
+
+<form method="post" asp-action="Createvm" asp-controller="Product" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label asp-for="productid "></label>
+        <input asp-for="productid" class="form-control"/>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="photo "></label>
+        <input asp-for="photo" class="form-control" />
+
+    </div>
+    <input type="submit"value="upload"  class="btn btn-primary"/>
+
+</form>

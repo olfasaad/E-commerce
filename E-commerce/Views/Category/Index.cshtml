@@ -1,0 +1,40 @@
+﻿@model E_commerce.Models.ViewModels.CategoryVm
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.category.Categoryid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category.Categoryname)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Categories) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoryid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoryname)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id=@item.Categoryid }) |
+                    @Html.ActionLink("Details", "Details", new { id=@item.Categoryid }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=@item.Categoryid  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

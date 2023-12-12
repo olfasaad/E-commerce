@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Services";
+}
+@model List<Product>;
+
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Jasmine</h2>
+            <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:medium;">
+                
+                The name of this flower comes from the Persian
+                word yasamin, which means "gift from God,". <br/>
+                The meaning of jasmine is unconditional and eternal
+                love, good fortune, and positive energy.
+
+            </p> </div>
+
+        <div class="row gy-4">
+            @foreach( var item in Model){
+                
+                    <div class="col">
+                        <div class="card shadow-sm">
+                        <img src="~/assets/css/img/flower/@item.photo" alt=" " height="350">
+                            <div class="card-body">
+                                <p class="card-text">@item.category</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Add To Panier</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    </div>
+                                    <small class="text-body-secondary">@item.price TND</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+            }
+            
+        </div>
+
+    </div>
+</section><!-- End Services Section -->

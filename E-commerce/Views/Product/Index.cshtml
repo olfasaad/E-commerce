@@ -1,0 +1,71 @@
+﻿@model IEnumerable<E_commerce.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.productid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categoryid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            var photo = "~/images/" + (item.photo ?? "daisy7.jpeg");
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.productid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.categoryid)
+                </td>
+             <td><img class="card-img-top imageThumbnail" height="100px" width="100px" src="@photo" asp-append-version="true" />
+          
+            </td>
+           
+            <td>
+                    <a asp-action="Edit" asp-controller="Product" class="btn btn-primary m-1" asp-route-id="@item.productid"><i class="bi bi-pencil"></i></a>
+
+                    <a asp-action="Details" asp-controller="Product" class="btn btn-primary m-1" asp-route-id="@item.productid"><i class="bi bi-ticket-detailed"></i></a> |
+                    <a asp-action="Delete" asp-controller="Product" class="btn btn-primary m-1" asp-route-id="@item.productid"><i class="bi bi-trash"></i></a>|
+                   
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
